@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "معاينة تلقائية لملفات PDF وعروض PowerPoint التقديمية ومستندات أخرى من خلال عارض مستندات Google."
+   },
+   "ext_name": {
+      "message": "عارض Docs PDF/PowerPoint (من Google)"
+   },
+   "google_docs_viewer": {
+      "message": "عارض مستندات Google"
+   },
+   "locale": {
+      "message": "ar"
+   },
+   "open_in_incognito_window": {
+      "message": "عرض الملف في نافذة التصفح المتخفي"
+   },
+   "open_in_new_tab": {
+      "message": "عرض الملف في علامة تبويب جديدة"
+   },
+   "open_in_new_window": {
+      "message": "عرض الملف في نافذة جديدة"
+   },
+   "save_in_docs": {
+      "message": "حفظ في محرّر مستندات Google"
+   }
+}

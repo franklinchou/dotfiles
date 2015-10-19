@@ -1,0 +1,14 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "icon.png",
+      "popup": "popup.html"
+   },
+   "description": "Nanny for Google Chrome (previously Chrome Nanny) allows you to be more productive and less distracted by blocking sites.",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCreMH1qU17ugtW2wSlvQdR1t/UqYbmEkW4mStz87Rx8LaImmpPVM0X0cEHMLd9e/dNoDRAmQWIxsEW/0b4bqHFqsX4+La0N85By/EcdR6zSKp4+9/3UlC4HSuUYJp4vGdCh/mZEr2j2K+yxgTJMGOjXvYje7xiZNKNYwaDw8ONCQIDAQAB",
+   "name": "Nanny for Google Chrome (TM)",
+   "options_page": "options.html",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.993"
+}

@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "PDF-fájlok, powerpoint prezentációk és más dokumentumok automatikus előnézetét adja a Google Dokumentumnéző alkalmazásban."
+   },
+   "ext_name": {
+      "message": "PDF-/PowerPoint-dokumentumnéző (Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Google Dokumentumok -- Olvasó"
+   },
+   "locale": {
+      "message": "hu"
+   },
+   "open_in_incognito_window": {
+      "message": "Fájl megtekintése inkognitóablakban"
+   },
+   "open_in_new_tab": {
+      "message": "Fájl megtekintése új lapon"
+   },
+   "open_in_new_window": {
+      "message": "Fájl megtekintése új ablakban"
+   },
+   "save_in_docs": {
+      "message": "Mentés a Google Dokumentumokban"
+   }
+}

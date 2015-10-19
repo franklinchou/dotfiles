@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Tự động xem trước pdf, bản trình bày powerpoint và các tài liệu khác trong Trình xem Google Documents."
+   },
+   "ext_name": {
+      "message": "Trình xem PDF/PowerPoint trong Documents (của Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Trình xem Google Documents"
+   },
+   "locale": {
+      "message": "vi"
+   },
+   "open_in_incognito_window": {
+      "message": "Xem tệp trong cửa sổ ẩn danh"
+   },
+   "open_in_new_tab": {
+      "message": "Xem tệp trong tab mới"
+   },
+   "open_in_new_window": {
+      "message": "Xem tệp trong cửa sổ mới"
+   },
+   "save_in_docs": {
+      "message": "Lưu trong Google Documents"
+   }
+}

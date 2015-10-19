@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Automatycznie wyświetla podgląd dokumentów PDF, prezentacji PowerPoint i innych dokumentów w Przeglądarce Dokumentów Google."
+   },
+   "ext_name": {
+      "message": "Przeglądarka dokumentów PDF/PowerPoint (od Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Przeglądarka Dokumentów Google"
+   },
+   "locale": {
+      "message": "pl"
+   },
+   "open_in_incognito_window": {
+      "message": "Wyświetl plik w oknie incognito"
+   },
+   "open_in_new_tab": {
+      "message": "Wyświetl plik w nowej karcie"
+   },
+   "open_in_new_window": {
+      "message": "Wyświetl plik w nowym oknie"
+   },
+   "save_in_docs": {
+      "message": "Zapisz w Dokumentach Google"
+   }
+}

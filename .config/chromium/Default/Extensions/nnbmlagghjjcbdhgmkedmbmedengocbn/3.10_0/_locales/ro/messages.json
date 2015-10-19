@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Previzualizează în mod automat documente în format PDF, prezentări PowerPoint şi alte documente în Vizualizatorul Google Docs."
+   },
+   "ext_name": {
+      "message": "Vizualizatorul de documente PDF/PowerPoint (de la Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Vizualizator Google Docs"
+   },
+   "locale": {
+      "message": "ro"
+   },
+   "open_in_incognito_window": {
+      "message": "Afişaţi fişierul într-o fereastră incognito"
+   },
+   "open_in_new_tab": {
+      "message": "Afişaţi fişierul într-o filă nouă"
+   },
+   "open_in_new_window": {
+      "message": "Afişaţi fişierul într-o fereastră nouă"
+   },
+   "save_in_docs": {
+      "message": "Salvaţi în Google Docs"
+   }
+}

@@ -1,0 +1,7 @@
+2015/10/18-21:14:18.442 32100 Reusing MANIFEST /home/fmc/.config/chromium/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2015/10/18-21:15:11.191 434 Level-0 table #5: started
+2015/10/18-21:15:11.360 434 Level-0 table #5: 6210634 bytes OK
+2015/10/18-21:15:11.382 434 Delete type=0 #3
+2015/10/18-21:43:56.236 434 Level-0 table #7: started
+2015/10/18-21:43:56.375 434 Level-0 table #7: 5395589 bytes OK
+2015/10/18-21:43:56.383 434 Delete type=0 #4

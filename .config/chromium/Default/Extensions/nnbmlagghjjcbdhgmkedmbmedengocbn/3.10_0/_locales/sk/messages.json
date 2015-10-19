@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Automaticky zobrazuje ukážky súborov PDF, prezentácií PowerPoint a iných dokumentov v Prehliadačí dokumentov Google."
+   },
+   "ext_name": {
+      "message": "Prehliadač dokumentov PDF / PowerPoint (od spoločnosti Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Prehliadač dokumentov Google"
+   },
+   "locale": {
+      "message": "sk"
+   },
+   "open_in_incognito_window": {
+      "message": "Zobraziť súbor v okne inkognito"
+   },
+   "open_in_new_tab": {
+      "message": "Zobraziť súbor na novej karte"
+   },
+   "open_in_new_window": {
+      "message": "Zobraziť súbor v novom okne"
+   },
+   "save_in_docs": {
+      "message": "Uložiť v Dokumentoch Google"
+   }
+}

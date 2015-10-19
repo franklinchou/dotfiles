@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Аутоматски прегледа PDF датотеке, Powerpoint презентације и друге документе у Приказивачу Google докумената."
+   },
+   "ext_name": {
+      "message": "Docs PDF/PowerPoint Viewer (од Google-а)"
+   },
+   "google_docs_viewer": {
+      "message": "Приказивач Google докумената"
+   },
+   "locale": {
+      "message": "sr"
+   },
+   "open_in_incognito_window": {
+      "message": "Прикажи датотеку у прозору за прегледање без архивирања"
+   },
+   "open_in_new_tab": {
+      "message": "Прикажи датотеку у новој картици"
+   },
+   "open_in_new_window": {
+      "message": "Прикажи датотеку у новом прозору"
+   },
+   "save_in_docs": {
+      "message": "Сачувај у Google документима"
+   }
+}

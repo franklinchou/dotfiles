@@ -1,0 +1,220 @@
+<html>
+<head>
+	<title>Wolfram|Alpha - Options</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="Shortcut Icon" href="http://www.wolframcdn.com/alphaFav.ico" />
+	<style type="text/css">
+	#content {
+		width: 573px;
+		margin: 30px auto;
+	}
+	
+	#logo {
+		background: url("/images/basicSprite.png") 1px -145px no-repeat;
+		display:block;
+		height:43px;
+		left:93px;	
+		width:352px;
+		margin: 10px auto;
+	}
+	
+	.main-pod {
+		padding: 0;
+		text-align: left;
+	}
+	
+	.main-pod .top {
+		width: 576px;
+		height: 20px;
+		background: transparent url(/images/example-pod-top.png) no-repeat scroll 0 0;
+	}
+	
+	.main-pod .top-header {
+		height: 64px;
+		background: transparent url(/images/main-pod-top.png) no-repeat scroll 0 0;
+		position: relative;
+	}
+	
+	.main-pod .mid {
+		padding: 12px 40px;
+		background: transparent url(/images/example-pod-mid.png) repeat-y scroll 0 0;
+	}
+	
+	.main-pod .bot {
+		height: 20px;
+		background: transparent url(/images/example-pod-bot.png) no-repeat scroll 0 0;
+		position: relative;
+		width: 576px;
+	}
+	
+	.main-pod .header {
+		padding: 28px 0 0 40px;
+		color: #db0303;
+		font-size: 19px;
+		line-height: 25px;
+		font-family: georgia, arial, Helvetica, serif;
+	}
+	.download-pod {
+		width: 534px;
+		margin-bottom: 10px;
+		font-family: arial, helvetica, serif;
+		font-size: 12px;
+		color: #838383;
+	}
+	
+	.download-pod .top {
+		width: 534px;
+		height: 44px;
+		background: transparent url(/images/download-pod-top.png) no-repeat scroll 0 0;
+		position: relative;
+	}
+	
+	.download-pod .mid {
+		padding: 16px 0 0 16px;
+		width: 534px;
+		background: transparent url(/images/download-pod-middle.png) repeat-y scroll 0 0;
+	}
+	
+	.download-pod .bot {
+		height: 14px;
+		background: transparent url(/images/download-pod-bottom.png) no-repeat scroll 0 0;
+	}
+	
+	.download-pod .top img {
+		position: absolute;
+		right: 12px;
+		top: 14px;
+	}
+	
+	.download-pod .top .header {
+		margin: 0;
+		padding: 20px 0 4px 18px;
+		font-family: arial, sans-serif;
+		font-size: 13px;
+		line-height: 13px;
+	}
+	
+	.radio {
+		position: relative;
+		top: 3px;
+	}
+	
+	label {
+		padding-right: 10px;
+	}
+	
+	#status {
+		padding-left: 20px;
+	}
+	
+	.save {
+		background: url(images/save_btn.gif) 0 0 no-repeat;
+		width: 48px;
+		height: 26px;
+		background-color: transparent;
+		border: none;
+		position: relative;
+		top: -5px;
+		margin-left: 15px;
+	}
+	
+	.save:hover {
+		background-position: 0 -26px;
+	}
+
+	#footer {
+		font-family: arial, helvetica, sans-serif;
+		font-size: 9px;
+		color: #999999;
+		margin: 20px auto;
+		width: 410px;
+	}
+	
+	#footer a, #footer a:visited {
+		text-decoration: none;
+		color: #999999;
+	}
+	
+	#footer a:hover {
+		color: #DB0303;
+	}
+	
+	#footer ul {
+		width: 410px;
+		margin: 0 auto 10px;
+		padding: 0 0 0 10px;
+		min-height: 14px;
+		list-style: none outside none;
+	}
+	
+	#footer ul li {
+		float: left;
+		margin: 0 auto;
+		padding: 0;
+		padding-left: 18px;
+		padding-right: 19px;
+		background: transparent url(/images/pipe.gif) no-repeat scroll 0 70%;
+	}
+	
+	
+	#footer ul li:first-child {
+		background: transparent none no-repeat scroll 0 0;
+		padding-left: 0;
+	}
+	
+	#footer ul li:last-child {
+		padding-right: 0;
+	}
+	</style>
+	<script src="src/options.js"></script>
+</head>
+<div id="content">
+<a id="logo" href="http://www.wolframalpha.com/"></a>
+<div class="main-pod">
+	<div class="top-header">
+		<div class="header">Chrome Extension Options</div>
+	</div>
+	<div class="mid" style="padding: 11px 21px 0;">
+		<div id="chromeExtension" class="download-pod">
+			<div class="top">
+				<div class="header">Open results in</div>
+			</div>
+			<div class="mid">
+				<input class="radio" id="new"type="radio" name="open" value="newtab"/>
+				<label for="new">New tab</label>
+				<input class="radio" id="same" type="radio" name="open" value="sametab"/>
+				<label for="same">Current tab</label>
+			</div>
+			<div class="bot">&nbsp;</div>
+		</div>
+		<div style="height: 1px; clear:both;"></div>
+	</div>
+
+	<div class="mid" style="padding: 11px 21px 0;">
+		<div id="showTipsOptionsDiv" class="download-pod">
+			<div class="top">
+				<div class="header">Show tips</div>
+			</div>
+			<div class="mid">
+				<input class="radio" id="showRadio" type="radio" name="tips" value="true"/>
+				<label for="showRadio">Show</label>
+				<input class="radio" id="dontShowRadio" type="radio" name="tips" value="false"/>
+				<label for="dontShowRadio">Do not show</label>
+			</div>
+			<div class="bot">&nbsp;</div>
+		</div>
+		<div style="height: 1px; clear:both;"></div>
+	</div>
+	<div class="bot">&nbsp;</div>
+	
+	<div id="footer">
+		<ul>
+			<li><a href="http://www.wolframalpha.com/">www.wolframalpha.com</a></li>
+			<li>&copy; 2012 Wolfram Alpha LLC&mdash;A <a href="http://www.wolfram.com/">Wolfram Research</a> Company</li>
+		</ul>
+	</div>
+	
+</div>
+</div>
+</body>
+</html>

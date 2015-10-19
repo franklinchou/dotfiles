@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "自动在 Google 文档查看器中预览 PDF、PowerPoint 演示文稿和其他文档。"
+   },
+   "ext_name": {
+      "message": "Docs PDF/PowerPoint Viewer（由 Google 提供）"
+   },
+   "google_docs_viewer": {
+      "message": "Google 文档查看器"
+   },
+   "locale": {
+      "message": "zh-CN"
+   },
+   "open_in_incognito_window": {
+      "message": "在隐身窗口中查看文件"
+   },
+   "open_in_new_tab": {
+      "message": "在新标签页中查看文件"
+   },
+   "open_in_new_window": {
+      "message": "在新窗口中查看文件"
+   },
+   "save_in_docs": {
+      "message": "保存到 Google 文档中"
+   }
+}

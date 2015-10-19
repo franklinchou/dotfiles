@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Αυτόματη προεπισκόπηση αρχείων pdf, παρουσιάσεων Powerpoint και άλλων εγγράφων στο Πρόγραμμα προβολής Εγγράφων Google."
+   },
+   "ext_name": {
+      "message": "Πρόγραμμα προβολής PDF/PowerPoint των Εγγράφων Google (από την Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Πρόγραμμα προβολής Εγγράφων Google"
+   },
+   "locale": {
+      "message": "el"
+   },
+   "open_in_incognito_window": {
+      "message": "Προβολή αρχείου σε Παράθυρο για ανώνυμη περιήγηση"
+   },
+   "open_in_new_tab": {
+      "message": "Προβολή αρχείου σε Νέα καρτέλα"
+   },
+   "open_in_new_window": {
+      "message": "Προβολή αρχείου σε Νέο παράθυρο"
+   },
+   "save_in_docs": {
+      "message": "Αποθήκευση στα Έγγραφα Google"
+   }
+}

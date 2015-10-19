@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Automatiškai peržiūrimi PDF formato, „PowerPoint“ pristatymai ir kiti dokumentai naudojant „Google“ dokumentų žiūryklę."
+   },
+   "ext_name": {
+      "message": "„Docs PDF/PowerPoint Viewer“ („Google“)"
+   },
+   "google_docs_viewer": {
+      "message": "„Google“ dokumentų žiūryklė"
+   },
+   "locale": {
+      "message": "lt"
+   },
+   "open_in_incognito_window": {
+      "message": "Žiūrėti failą inkognito lange"
+   },
+   "open_in_new_tab": {
+      "message": "Žiūrėti failą naujo skirtuko lape"
+   },
+   "open_in_new_window": {
+      "message": "Žiūrėti failą naujame lange"
+   },
+   "save_in_docs": {
+      "message": "Išsaugoti „Google“ dokumentuose"
+   }
+}

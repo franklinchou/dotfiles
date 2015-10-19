@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Автоматично визуализира PDF файлове, презентации на Powerpoint и други документи в Google Визуализатор на документи."
+   },
+   "ext_name": {
+      "message": "Визуализатор на PDF документи/PowerPoint (от Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Google Визуализатор на документи"
+   },
+   "locale": {
+      "message": "bg"
+   },
+   "open_in_incognito_window": {
+      "message": "Преглед на файла в прозорец „инкогнито“"
+   },
+   "open_in_new_tab": {
+      "message": "Преглед на файла в нов раздел"
+   },
+   "open_in_new_window": {
+      "message": "Преглед на файла в нов прозорец"
+   },
+   "save_in_docs": {
+      "message": "Запазване в Google Документи"
+   }
+}
