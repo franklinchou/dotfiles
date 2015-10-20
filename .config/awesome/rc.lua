@@ -131,32 +131,39 @@ mytextclock = awful.widget.textclock()
 -- Create battery mgmt wdiget
 function batInfo()
     local power_dir = "/sys/class/power_supply/BAT0"
-    local power_curr = io.open(power_dir.."/energy_now")
-    local power_full = io.open(power_dir.."/energy_full")
     local power_stat = io.open(power_dir.."/status")
-    local battery = assert(math.floor(power_curr:read() * 100 / power_full:read()))
-    local t = power_stat:read()
+    t = power_stat:read()
 
-    if t:match("Discharging") then
-        state = "/d"
-        if tonumber(battery) < 10 then
-            naughty.notify({ 
-                preset = naughty.config.presets.critical,
-                title = "Warning: Low battery", 
-                text = "Battery level is under 10%.",
-                timeout = 5
-            })
-        end
-    elseif t:match("Charging") then
-        state = "/C"
+    local battery
+    local state
+
+    if t == nil then
+        battery = ""
+        state = "A/C"
     else
-        state = "/U"
+        local power_curr = io.open(power_dir.."/energy_now")
+        local power_full = io.open(power_dir.."/energy_full")
+        battery = assert(math.floor(power_curr:read() * 100 / power_full:read()))
+        if t:match("Discharging") then
+            state = "/d"
+            if tonumber(battery) < 10 then
+                naughty.notify({
+                    preset = naughty.config.presets.critical,
+                    title = "Warning: low battery!",
+                    text = "Battery level is below 10%.",
+                    timeout = 5
+                })
+            end
+        elseif t:match("Charging") then
+            state = "/C"
+        else
+            state = "/U"
+        end
     end
-   
-    power_curr:close()
-    power_full:close()
+
     power_stat:close()
-    return "| Battery : "..battery..state.." "
+    return " | "..battery..state.." "
+
 end
 
 batterywidget = wibox.widget.textbox()
