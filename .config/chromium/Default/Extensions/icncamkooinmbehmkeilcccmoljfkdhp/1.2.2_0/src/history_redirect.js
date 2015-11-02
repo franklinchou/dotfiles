@@ -1,1 +1,0 @@
-chrome.extension.sendRequest({action: "historyRedirect"});
