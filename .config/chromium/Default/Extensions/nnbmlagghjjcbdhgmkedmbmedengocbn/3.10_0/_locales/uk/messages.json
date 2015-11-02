@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Автоматично здійснює попередній перегляд файлів у форматі PDF, презентацій у форматі Рowerpoint та інших документів у розширенні \"Перегляд документів Google\"."
+   },
+   "ext_name": {
+      "message": "Перегляд документів у форматі PDF/PowerPoint (від Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Перегляд документів Google"
+   },
+   "locale": {
+      "message": "uk"
+   },
+   "open_in_incognito_window": {
+      "message": "Переглянути файл в анонімному вікні"
+   },
+   "open_in_new_tab": {
+      "message": "Переглянути файл у новій вкладці"
+   },
+   "open_in_new_window": {
+      "message": "Переглянути файл у новому вікні"
+   },
+   "save_in_docs": {
+      "message": "Зберегти в Документах Google"
+   }
+}

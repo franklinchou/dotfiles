@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Permet d'afficher automatiquement un aperçu des PDF, des présentations PowerPoint et d'autres documents dans la visionneuse Google Documents."
+   },
+   "ext_name": {
+      "message": "Visionneuse Google Documents PDF/PowerPoint (par Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Visionneuse Google Documents"
+   },
+   "locale": {
+      "message": "fr"
+   },
+   "open_in_incognito_window": {
+      "message": "Afficher le fichier dans une fenêtre de navigation privée"
+   },
+   "open_in_new_tab": {
+      "message": "Afficher le fichier dans un nouvel onglet"
+   },
+   "open_in_new_window": {
+      "message": "Afficher le fichier dans une nouvelle fenêtre"
+   },
+   "save_in_docs": {
+      "message": "Enregistrer dans Google Documents"
+   }
+}

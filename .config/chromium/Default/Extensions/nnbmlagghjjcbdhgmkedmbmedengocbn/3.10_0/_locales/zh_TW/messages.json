@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "使用 Google 文件檢視器自動預覽 PDF、PowerPoint 簡報和其他文件。"
+   },
+   "ext_name": {
+      "message": "文件 PDF/PowerPoint 檢視器 (由 Google 提供)"
+   },
+   "google_docs_viewer": {
+      "message": "Google 文件檢視器"
+   },
+   "locale": {
+      "message": "zh-TW"
+   },
+   "open_in_incognito_window": {
+      "message": "在無痕式視窗中檢視檔案"
+   },
+   "open_in_new_tab": {
+      "message": "在新分頁中檢視檔案"
+   },
+   "open_in_new_window": {
+      "message": "在新視窗中檢視檔案"
+   },
+   "save_in_docs": {
+      "message": "儲存到 Google 文件"
+   }
+}

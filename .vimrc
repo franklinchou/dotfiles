@@ -21,9 +21,11 @@ highlight CursorLineNr cterm=bold ctermbg=gray ctermfg=blue
 " call :PlugInstall to update
 call plug#begin()
 Plug 'tbastos/vim-lua'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'ternjs/tern_for_vim'
+Plug 'valloric/YouCompleteMe'
 call plug#end()
 
 " }}}

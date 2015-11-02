@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Автоматический предварительный просмотр PDF-файлов, презентаций PowerPoint и других документов в Google Docs Viewer."
+   },
+   "ext_name": {
+      "message": "Docs PDF/PowerPoint Viewer (от Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Google Docs Viewer"
+   },
+   "locale": {
+      "message": "ru"
+   },
+   "open_in_incognito_window": {
+      "message": "Просмотреть файл в новом окне в режиме инкогнито"
+   },
+   "open_in_new_tab": {
+      "message": "Просмотреть файл в новой вкладке"
+   },
+   "open_in_new_window": {
+      "message": "Просмотреть файл в новом окне"
+   },
+   "save_in_docs": {
+      "message": "Сохранить в Документах Google"
+   }
+}

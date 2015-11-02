@@ -1,0 +1,25 @@
+{
+   "background": {
+      "scripts": [ "js/jquery.min.js", "js/background.js" ]
+   },
+   "browser_action": {
+      "default_popup": "howSquanchy.html"
+   },
+   "content_scripts": [ {
+      "css": [ "squanchyStyle.css" ],
+      "js": [ "js/jquery.min.js", "js/squanchify.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "description": "This extension makes your browsing experience...Squanchier.",
+   "icons": {
+      "128": "icons/squanchy-128.png",
+      "16": "icons/squanchy-16.png",
+      "48": "icons/squanchy-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhQDrwu7vaEIUH82vBI77XYfSSnKUQwV+cbZVjc8s/wdO1vVgs8MiD3sABJWFV1hoXzl8vz21uz/byJTDLoI8vd/rD0mFRCFpfOs52RJVQn5+ZjhqPWl1Q+9y0NDXyvYJifxhdAvQ2yLKiZort0yWLhxE8895PJK/7makHt4fExGkuzaUhCqOusibuKqCwFEQTspZQ7T+2SjdPG7atu8xhXF1sgC+h1cAwrKw52FV44U2IFF0ia3arLkH6NNVa4gK3B9qw/ulrm8Qc2GWyHVhUILc9zETLbmXvJxoeSwLt8Zi4iEpgGb2xMeU5pO93DJ9cijEfZV3nIfr2UhSGya7NwIDAQAB",
+   "manifest_version": 2,
+   "name": "Squanchify",
+   "permissions": [ "activeTab", "storage", "https://ajax.googleapis.com/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2"
+}

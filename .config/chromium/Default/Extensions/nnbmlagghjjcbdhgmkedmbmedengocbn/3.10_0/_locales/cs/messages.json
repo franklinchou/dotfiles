@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Automaticky zobrazí náhled souborů PDF, prezentací PowerPoint a dalších dokumentů v Prohlížeči dokumentů Google."
+   },
+   "ext_name": {
+      "message": "Prohlížeč dokumentů ve formátu PDF/PowerPoint (od společnosti Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Prohlížeč dokumentů Google"
+   },
+   "locale": {
+      "message": "cs"
+   },
+   "open_in_incognito_window": {
+      "message": "Zobrazit soubor v anonymním okně"
+   },
+   "open_in_new_tab": {
+      "message": "Zobrazit soubor na nové kartě"
+   },
+   "open_in_new_window": {
+      "message": "Zobrazit soubor v novém okně"
+   },
+   "save_in_docs": {
+      "message": "Uložit v Dokumentech Google"
+   }
+}

@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Google-dokumenttien katselu näyttää automaattisesti esikatselun pdf-tiedostoista, powerpoint-esityksistä ja muista asiakirjoista."
+   },
+   "ext_name": {
+      "message": "PDF/PowerPoint-dokumenttien katselu (Googlen tuote)"
+   },
+   "google_docs_viewer": {
+      "message": "Google-dokumenttien katselu"
+   },
+   "locale": {
+      "message": "fi"
+   },
+   "open_in_incognito_window": {
+      "message": "Näytä tiedosto incognito-ikkunassa"
+   },
+   "open_in_new_tab": {
+      "message": "Näytä tiedosto uudella välilehdellä"
+   },
+   "open_in_new_window": {
+      "message": "Näytä tiedosto uudessa ikkunassa"
+   },
+   "save_in_docs": {
+      "message": "Tallenna Google-dokumentteihin"
+   }
+}

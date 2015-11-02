@@ -1,0 +1,22 @@
+2015/10/19-22:59:24.379 2778 Reusing MANIFEST /home/fmc/.config/chromium/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2015/10/19-22:59:24.379 2778 Recovering log #8
+2015/10/19-22:59:24.379 2778 Reusing old log /home/fmc/.config/chromium/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000008.log 
+2015/10/19-22:59:30.165 7552 Level-0 table #12: started
+2015/10/19-22:59:30.217 7552 Level-0 table #12: 5287534 bytes OK
+2015/10/19-22:59:30.231 7552 Delete type=0 #8
+2015/10/19-23:00:07.914 7552 Level-0 table #14: started
+2015/10/19-23:00:07.974 7552 Level-0 table #14: 5130870 bytes OK
+2015/10/19-23:00:07.991 7552 Delete type=0 #11
+2015/10/19-23:28:52.911 7552 Level-0 table #16: started
+2015/10/19-23:28:52.966 7552 Level-0 table #16: 5131234 bytes OK
+2015/10/19-23:28:52.979 7552 Delete type=0 #13
+2015/10/19-23:28:52.980 7552 Compacting 4@0 + 1@1 files
+2015/10/19-23:28:53.104 7552 Generated table #17: 3 keys, 5130742 bytes
+2015/10/19-23:28:53.114 7552 Generated table #18: 12 keys, 78554 bytes
+2015/10/19-23:28:53.114 7552 Compacted 4@0 + 1@1 files => 5209296 bytes
+2015/10/19-23:28:53.126 7552 compacted to: files[ 0 2 1 0 0 0 0 ]
+2015/10/19-23:28:53.126 7552 Delete type=2 #7
+2015/10/19-23:28:53.127 7552 Delete type=2 #9
+2015/10/19-23:28:53.131 7552 Delete type=2 #12
+2015/10/19-23:28:53.133 7552 Delete type=2 #14
+2015/10/19-23:28:53.135 7552 Delete type=2 #16

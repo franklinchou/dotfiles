@@ -1,0 +1,29 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon19.png",
+         "38": "images/icon38.png"
+      },
+      "default_title": "BB10 / PlayBook App Manager"
+   },
+   "content_security_policy": "script-src 'self'; object-src 'self'",
+   "description": "List, manage and install apps on BlackBerry 10 and PlayBook.",
+   "homepage_url": "http://gridbook.org/pb-app-mgr/",
+   "icons": {
+      "128": "images/playbook.png",
+      "16": "images/icon16.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDEgxaKe6ozKHfO56Lr9BDyKG2/tdeM9taEzJZwHklp8Xw0UFrURq228P/+FPgcTaRErep7rLdpaN2wfbboKI4i46P01mWDuF6DQnePiJet6m8qZ6WjnS3zE1I/XnfDOJ5B4vnPpDuKyCxgVB7WhZMEWCOijY98CFagk4K9koKJTQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "18.0",
+   "name": "BB10 / PlayBook App Manager",
+   "offline_enabled": true,
+   "options_page": "options.html",
+   "permissions": [ "webRequest", "webRequestBlocking", "tabs", "https://*/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.2.2",
+   "web_accessible_resources": [ "pb-apps.js" ]
+}

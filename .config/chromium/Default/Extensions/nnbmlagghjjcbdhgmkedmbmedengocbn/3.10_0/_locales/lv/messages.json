@@ -1,0 +1,26 @@
+{
+   "ext_description": {
+      "message": "Automātiski tiek priekšskatīti PDF dokumenti, PowerPoint prezentācijas un citi dokumenti Google dokumentu skatītājā."
+   },
+   "ext_name": {
+      "message": "Dokumentu PDF/PowerPoint skatītājs (nodrošina Google)"
+   },
+   "google_docs_viewer": {
+      "message": "Google dokumentu skatītājs"
+   },
+   "locale": {
+      "message": "lv"
+   },
+   "open_in_incognito_window": {
+      "message": "Skatīt failu inkognito režīma logā"
+   },
+   "open_in_new_tab": {
+      "message": "Skatīt failu jaunā cilnē"
+   },
+   "open_in_new_window": {
+      "message": "Skatīt failu jaunā logā"
+   },
+   "save_in_docs": {
+      "message": "Saglabāt Google dokumentos"
+   }
+}
