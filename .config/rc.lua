@@ -1,9 +1,8 @@
 --
 -- awesome wm configuration
 -- fmc (franklin.chou@yahoo.com)
--- last modified 14 Nov 2015 
+-- last modified 18 Oct 2015 
 --
--- Send to ~/dev/dotfiles
 
 -- Standard awesome library
 local gears = require("gears")
@@ -127,6 +126,8 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
+-- cpu mgmt and memory mgmt will be handled by screen, 15 Oct 2015
+
 -- Create battery mgmt wdiget
 function batInfo()
     local power_dir = "/sys/class/power_supply/BAT0"
@@ -174,17 +175,6 @@ end)
 batterywidgettimer:start()
 
 -- Create volume widget
-volumewidget = wibox.widget.textbox()
-
-function volumeInfo()
-    local f = io.popen("amixer get Master | grep -o \'[0-9]\\{1,2\\}%\'")
-    local s = f:read("*a")
-    f:close()
-
-    return "| "..s.." "
-end
-
-volumewidget:set_markup(volumeInfo())
 
 -- Create weather widget
 weatherwidget = wibox.widget.textbox()
@@ -311,8 +301,7 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(batterywidget)
-    right_layout:add(volumewidget)
-    --right_layout:add(brightnesswidget)
+    right_layout:add(brightnesswidget)
     right_layout:add(weatherwidget)
     right_layout:add(mylayoutbox[s])
 
@@ -377,10 +366,11 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- volume control
-    awful.key({ modkey,           }, "v",     function () awful.util.spawn("amixer set Master 5%+")  end),
+    awful.key({ modkey,           }, "v",     function () awful.util.spawn("amixer set Master 5%+") end),
     awful.key({ modkey, "Shift"   }, "v",     function () awful.util.spawn("amixer set Master 5%-") end),
 
     -- display control
+
     awful.key({ modkey, "Control" }, "n", awful.client.restore)
 
     -- Prompt
@@ -397,6 +387,7 @@ clientkeys = awful.util.table.join(
     -- adjust diagonal; for use with floating windows
     awful.key({ modkey,           }, "Prior",  function () awful.client.moveresize(0, 0, -40, -40) end),
     awful.key({ modkey,           }, "Next",   function () awful.client.moveresize(0, 0, 40, 40)   end),
+ 
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),

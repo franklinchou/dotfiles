@@ -1,4 +1,5 @@
 .vim/plugged
+.vim/.netrwhist                    
 .config/chromium
 .config/midori
 .config/menu
