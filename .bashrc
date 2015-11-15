@@ -69,10 +69,12 @@ alias screen='screen -c /home/fmc/.config/screen/.screenrc'
 
 # PS1='[\u@\h \W]\$ '	# default
 
-# colorizes; adds BASH command, green N for nominal, yellow W for all errors/warnings
+# Colorize
 status_nominal=$Green
 status_warning=$BYellow
 
+# adds command evaluation status
+# green N for nominal, yellow W for all errors/warnings
 status=""
 if [[ $? != 0 ]]; then
     status="$status_warning""W"
