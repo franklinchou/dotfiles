@@ -1,7 +1,7 @@
 --
 -- awesome wm configuration
 -- fmc (franklin.chou@yahoo.com)
--- last modified 14 Nov 2015 
+-- last modified 20 Nov 2015 
 --
 -- Send to ~/dev/dotfiles
 
@@ -177,14 +177,24 @@ batterywidgettimer:start()
 volumewidget = wibox.widget.textbox()
 
 function volumeInfo()
-    local f = io.popen("amixer get Master | grep -o \'[0-9]\\{1,2\\}%\'")
+    local f = io.popen("amixer get Master | grep -o \'[0-9]\\{1,\\}%\'")
     local s = f:read("*a")
     f:close()
 
-    return "| "..s.." "
+    return "| "..s 
 end
 
 volumewidget:set_markup(volumeInfo())
+
+function volume(mode, widget)
+    if mode == "up" then
+        io.popen("amixer set Master 5%+"):read("*all")
+        volumewidget:set_markup(volumeInfo())
+    elseif mode == "down" then
+        io.popen("amixer set Master 5%-"):read("*all")
+        volumewidget:set_markup(volumeInfo())
+    end
+end
 
 -- Create weather widget
 weatherwidget = wibox.widget.textbox()
@@ -201,7 +211,7 @@ function weatherInfo()
             timeout = 10
         })
     end
-    f.close()
+    f.close()                                                       
     
     return s
 end
@@ -212,23 +222,6 @@ weatherwidgettimer:connect_signal("timeout", function()
     weatherwidget:set_markup(weatherInfo())
 end)
 weatherwidgettimer:start()
-
--- Create brightness widget
-function brightnessInfo()
-    local backlight_dir = "/sys/class/backlight/intel_backlight"
-    local brightness_now = io.open(backlight_dir.."/brightness")
-    local brightness_max = io.open(backlight_dir.."/max_brightness")
-
-    local brightness = assert(math.floor(brightness_now:read() * 100 / brightness_max:read()))
-    
-    brightness_now:close()
-    brightness_max:close()
-    return " | Display : "..brightness.."% "
-end
-
-brightnesswidget = wibox.widget.textbox()
-brightnesswidget:set_markup(brightnessInfo())
-
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -377,8 +370,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- volume control
-    awful.key({ modkey,           }, "v",     function () awful.util.spawn("amixer set Master 5%+")  end),
-    awful.key({ modkey, "Shift"   }, "v",     function () awful.util.spawn("amixer set Master 5%-") end),
+    awful.key({ modkey,           }, "v",    function()  volume("up", volumewidget) end),
+    awful.key({ modkey, "Shift"   }, "v",    function()  volume("down", volumewidget) end),
 
     -- display control
     awful.key({ modkey, "Control" }, "n", awful.client.restore)

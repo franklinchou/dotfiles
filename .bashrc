@@ -62,19 +62,23 @@ UWhite='\e[4;37m'       # White
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto -a'
+# history
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE="history:ls"
+
+
+# aliases
+alias ls='ls --color=auto -a --group-directories-first'
 alias dir='ls --color=auto'
 alias grep='grep --color=auto'
 alias screen='screen -c /home/fmc/.config/screen/.screenrc'
 
 # PS1='[\u@\h \W]\$ '	# default
 
-# Colorize
+# colorizes; adds BASH command, green N for nominal, yellow W for all errors/warnings
 status_nominal=$Green
 status_warning=$BYellow
 
-# adds command evaluation status
-# green N for nominal, yellow W for all errors/warnings
 status=""
 if [[ $? != 0 ]]; then
     status="$status_warning""W"
@@ -83,7 +87,7 @@ else
 fi
 
 user_color=$Blue
-host_color=$Black
+host_color=$UBlack  # Black not visible in terminal
 path_color=$BBlue
 
 PS1="\
