@@ -3,7 +3,6 @@
 -- Franklin Chou (franklin.chou@yahoo.com)
 -- 21 Nov. 2015
 
-
 -- Create weather widget
 weatherwidget = wibox.widget.textbox()
 
