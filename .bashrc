@@ -64,7 +64,7 @@ UWhite='\e[4;37m'       # White
 
 # history
 export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE="history:ls"
+export HISTIGNORE="history:ls:clear"
 
 
 # aliases

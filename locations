@@ -1,0 +1,4 @@
+~.bashrc:~/dev/dotfiles/
+~/.config/.bash/*:~/dev/dotfiles/.config/bash/
+~/.config/awesome/*:~/dev/dotfiles/.config/awesome/
+~/.config/screen/*:~/dev/dotfiles/.config/screen/
