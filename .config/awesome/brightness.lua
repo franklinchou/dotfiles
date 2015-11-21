@@ -1,5 +1,5 @@
 --
--- brightness lua code stu
+-- brightness lua code stub
 -- fmc (franklin.chou@yahoo.com)
 -- last modified 20 Nov 2015
 --
