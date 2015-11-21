@@ -1,3 +1,8 @@
+-- Weather widget stub
+-- Currently implement in rc.lua
+-- Franklin Chou (franklin.chou@yahoo.com)
+-- 21 Nov. 2015
+
 
 -- Create weather widget
 weatherwidget = wibox.widget.textbox()
