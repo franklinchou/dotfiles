@@ -10,7 +10,7 @@
 # COLORS:
 # Bold can be triggered by pre-pending B; underline, by prepending U
 # Eight colors are available via standard BASH prompt:
-# 
+#
 # Black
 # Red
 # Green
@@ -115,7 +115,7 @@ if [[ -s "tasks.txt" ]]; then
     echo ""
 else
     return
-fi 
+fi
 
 # changes directory to home
 cd ~

@@ -10,6 +10,7 @@ set number
 set cursorline
 set nocompatible
 set colorcolumn=80 
+set laststatus=2
 highlight colorcolumn ctermbg=gray
 highlight LineNr ctermbg=gray ctermfg=black 
 highlight CursorLineNr cterm=bold ctermbg=gray ctermfg=blue
@@ -26,6 +27,7 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ternjs/tern_for_vim'
 Plug 'valloric/YouCompleteMe'
+Plug 'bling/vim-airline'
 call plug#end()
 
 " }}}

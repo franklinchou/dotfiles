@@ -11,7 +11,7 @@ function brightnessInfo()
     local brightness_max = io.open(backlight_dir.."/max_brightness")
 
     local brightness = assert(math.floor(brightness_now:read() * 100 / brightness_max:read()))
-    
+
     brightness_now:close()
     brightness_max:close()
     return " | Display : "..brightness.."% "
@@ -19,5 +19,3 @@ end
 
 brightnesswidget = wibox.widget.textbox()
 brightnesswidget:set_markup(brightnessInfo())
-
-
