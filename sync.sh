@@ -14,6 +14,15 @@
 
 INPUT='./.locations'
 
+# @TODO: perform comparison to determine which file is more recent;
+# could be by timestamp
+function warn {
+    echo "Warning! This function assumes that experimental changes are more"
+    echo "recent than dev changes. Continue?"
+
+    read -p "$*"
+}
+
 function copy {
     if [[ -s "$INPUT" ]]; then
         while IFS='' read -r line || [[ -n "$line" ]]; do
@@ -34,4 +43,5 @@ function copy {
     return
 }
 
+warn
 copy

@@ -66,12 +66,28 @@ UWhite='\e[4;37m'       # White
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="history:ls:clear"
 
+#------------------------------------------------------------------------------
+# check if there are downloading torrents
+
+function __torrent {
+    transmission-remote -l | grep -o '[0-9]\{1,\}%' | while read line; do
+        if [ "${line%?}" -ne 100 ]; then
+            transmission-remote --start
+            break
+        fi
+    done
+
+    return
+}
+
+#------------------------------------------------------------------------------
 
 # aliases
 alias ls='ls --color=auto -a --group-directories-first'
 alias dir='ls --color=auto'
 alias grep='grep --color=auto'
 alias screen='screen -c /home/fmc/.config/screen/.screenrc'
+alias transmission='__torrent'
 
 # PS1='[\u@\h \W]\$ '	# default
 
@@ -100,22 +116,31 @@ PS1="\
 \[$Color_Off\] > "
 
 # lists available python versions
-echo -e "$BPurple""Listing available Python versions:$Color_Off"
-~/.config/.bash/py_ver_list.bsh
-echo ""
+function __py_ver_list {
+    echo -e "$BPurple""Listing available Python versions:$Color_Off"
+    ~/.config/.bash/py_ver_list.bsh
+    echo ""
+    return
+}
 
 # lists outstanding dev tasks
-if [[ -s "tasks.txt" ]]; then
-    echo -e "$BCyan""Outstanding development tasks:$Color_Off"
-    n=1
-    while read p; do
-        echo $n" "$p
-        n=$(( n+1 ))
-    done <tasks.txt
-    echo ""
-else
+function __tasklist {
+    if [[ -s "tasks.txt" ]]; then
+        echo -e "$BCyan""Outstanding development tasks:$Color_Off"
+        n=1
+        while read p; do
+            echo $n" "$p
+            n=$(( n+1 ))
+        done <tasks.txt
+        echo ""
+    fi
+
     return
-fi
+}
+
+# execute functions
+__py_ver_list
+__tasklist
 
 # changes directory to home
 cd ~
