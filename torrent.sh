@@ -10,7 +10,7 @@
 function __torrent {
     transmission-remote -l | grep -o '[0-9]\{1,\}%' | while read line; do
         if [ "${line%?}" -ne 100 ]; then
-            transmission-remote --start
+            transmission-daemon start
             break
         fi
     done
