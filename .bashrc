@@ -72,7 +72,7 @@ export HISTIGNORE="history:ls:clear"
 function __torrent {
     transmission-remote -l | grep -o '[0-9]\{1,\}%' | while read line; do
         if [ "${line%?}" -ne 100 ]; then
-            transmission-daemon start
+            transmission-remote --start
             break
         fi
     done
@@ -114,7 +114,7 @@ PS1="\
 # lists available python versions
 function __py_ver_list {
     echo -e "$BPurple""Listing available Python versions:$Color_Off"
-    ~/.config/.bash/py_ver_list.bsh
+    ~/.config/.bash/py_ver_list.sh
     echo ""
     return
 }
