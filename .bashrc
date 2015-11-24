@@ -2,7 +2,7 @@
 
 # ~/.bashrc
 # fmc (franklin.chou@yahoo.com)
-# last modified: 15 Nov 2015
+# last modified: 23 Nov 2015
 #
 
 #------------------------------------------------------------------------------
@@ -22,7 +22,7 @@
 #
 #------------------------------------------------------------------------------
 
-# [forked from https://github.com/joeledwards/bashrc/blob/master/bashrc]
+# from https://github.com/joeledwards/bashrc/blob/master/bashrc
 
 # Reset color
 Color_Off='\e[0m'       # Text Reset
@@ -68,7 +68,7 @@ export HISTIGNORE="history:ls:clear"
 
 #------------------------------------------------------------------------------
 # check if there are downloading torrents
-
+#------------------------------------------------------------------------------
 function __torrent {
     transmission-remote -l | grep -o '[0-9]\{1,\}%' | while read line; do
         if [ "${line%?}" -ne 100 ]; then
@@ -80,16 +80,12 @@ function __torrent {
     return
 }
 
-#------------------------------------------------------------------------------
-
 # aliases
 alias ls='ls --color=auto -a --group-directories-first'
 alias dir='ls --color=auto'
 alias grep='grep --color=auto'
 alias screen='screen -c /home/fmc/.config/screen/.screenrc'
 alias transmission='__torrent'
-
-# PS1='[\u@\h \W]\$ '	# default
 
 # colorizes; adds BASH command, green N for nominal, yellow W for all errors/warnings
 status_nominal=$Green
@@ -138,9 +134,16 @@ function __tasklist {
     return
 }
 
+#------------------------------------------------------------------------------
 # execute functions
+#------------------------------------------------------------------------------
 __py_ver_list
 __tasklist
+
+#------------------------------------------------------------------------------
+# source external scripts
+#------------------------------------------------------------------------------
+source ~/.config/.bash/colorize_man_pages.sh
 
 # changes directory to home
 cd ~
