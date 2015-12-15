@@ -346,12 +346,15 @@ transmission-cli 2.84-1
 tree 1.7.0-1
 ttf-freefont 20120503-4
 tzdata 2015g-1
+unzip 6.0-10
 usbutils 008-1
 util-linux 2.27-5
 v4l-utils 1.6.3-1
 videoproto 2.3.2-1
 vim 7.4.884-1
 vim-runtime 7.4.884-1
+virtualbox 5.0.6-1
+virtualbox-host-modules 5.0.6-1
 vlc 2.2.1-8
 wayland 1.9.0-1
 webkitgtk 2.4.9-1

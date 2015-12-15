@@ -1,6 +1,7 @@
 .locations
+.fonts/fonts
 .vim/plugged
-.vim/.netrwhist                    
+.vim/.netrwhist
 .config/chromium
 .config/midori
 .config/menu

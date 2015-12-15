@@ -1,0 +1,33 @@
+# Screen configuration
+# fmc (franklin.chou@yahoo.com)
+# Last modified: 15 Dec 2015
+#
+# Default screen config file can be found at /etc/screenrc
+# 
+# Personal config files are located at /home/fmc/.config/screen/.screenrc
+# Addition of an alias to bash config will force screen to launch with personal config file
+#
+
+###############################################################################
+# Key bindings
+###############################################################################
+
+startup_message off
+
+# 256 color support for screen
+term screen-256color
+
+# Even more 256 color support for screen
+# Source stolen from: http://robotsrule.us/vim/
+# "I suggest copy and pasting that without trying to understand it. No one understands termcap stuff."
+# Can confirm; WTF is this?
+ttrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+defbce "on"
+
+# audio bell (can be toggled via: <C-a><C-g>
+vbell on
+
+backtick 1 1 1 '/home/fmc/.config/screen/get_mem.sh'
+
+hardstatus alwayslastline '[ %{=s yk}Load: %l %{=s wk}]%{=s wk}[ %{wk}%1`%{=s wk} ][%= %{=s wk}%?%-Lw%?%{=Bs gk}%n %f %t%{=s wk}%?%{=s wk}%+Lw%?%= %{=s wk}][ %{B}%D %M-%d-%Y %{=s wk}%C %A %{=s wk}] '
