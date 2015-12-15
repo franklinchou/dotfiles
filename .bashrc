@@ -5,6 +5,9 @@
 # last modified: 23 Nov 2015
 #
 
+# use 256 color
+export TERM=xterm-256color
+
 #------------------------------------------------------------------------------
 #
 # COLORS:
@@ -86,6 +89,7 @@ alias dir='ls --color=auto'
 alias grep='grep --color=auto'
 alias screen='screen -c /home/fmc/.config/screen/.screenrc'
 alias transmission='__torrent'
+alias tasks='__tasklist'
 
 # colorizes; adds BASH command, green N for nominal, yellow W for all errors/warnings
 status_nominal=$Green
@@ -138,7 +142,6 @@ function __tasklist {
 # execute functions
 #------------------------------------------------------------------------------
 __py_ver_list
-__tasklist
 
 #------------------------------------------------------------------------------
 # source external scripts
