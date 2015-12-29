@@ -1,7 +1,7 @@
 "
 " vimrc
 " fmc (franklin.chou@yahoo.com)
-" Last Modified: 15 Dec 2015
+" Last Modified: 28 DEC 2015
 "
 
 " SET FEEDBACK {{{
@@ -23,6 +23,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'valloric/YouCompleteMe'
 Plug 'itchyny/lightline.vim'
 " Plug 'scrooloose/nerdtree'
+Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
@@ -30,10 +31,10 @@ call plug#end()
 
 " BASIC GUI SETTINGS {{{
 
-set number
 " set encoding=utf-8
 set cursorline
 set nocompatible
+set number
 set colorcolumn=80
 
 " alternate colors:
@@ -52,12 +53,16 @@ if &term == "xterm-256color"
     set background=dark
 endif
 
+" set clipboard across multiple instances of vim
+set clipboard=unnamed
+
 " }}}
 
 " LIGHTLINE SETTINGS {{{
 
 " display lightline
 set laststatus=2
+" set showtabline=2
 
 " remove extraneous information provided by the default vim statusline
 " now covered by lightline
@@ -65,15 +70,23 @@ set noshowmode
 
 let g:lightline = {
     \ 'enable': {
-        \ 'tabline': 1
+        \ 'tabline': 0,
+        \ 'statusline': 1
     \ },
     \ 'colorscheme': 'gruvbox'
     \ }
 
 " }}}
 
+" BUFTABLINE SETTINGS {{{
 
-"  TABS {{{
+let g:buftabline_show=2
+let g:buftabline_numbers=1
+let g:buftabline_indicators=1
+
+" }}}
+
+" TABS {{{
 
 " VIM uses the `tabstop` setting to visually display tabs
 set tabstop=4
