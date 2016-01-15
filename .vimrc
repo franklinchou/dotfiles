@@ -1,7 +1,7 @@
 "
 " vimrc
 " fmc (franklin.chou@yahoo.com)
-" Last Modified: 28 DEC 2015
+" Last Modified: 15 Dec 2015
 "
 
 " SET FEEDBACK {{{
@@ -103,5 +103,11 @@ set expandtab
 
 " map F5 to display gundo interface
 nnoremap <F5> :GundoToggle<CR>
+
+" set code folding
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
 
 " }}}
