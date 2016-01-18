@@ -1,7 +1,7 @@
 "
 " vimrc
 " fmc (franklin.chou@yahoo.com)
-" Last Modified: 15 Dec 2015
+" Last Modified: 17 Jan 2015
 "
 
 " SET FEEDBACK {{{
@@ -55,6 +55,15 @@ endif
 
 " set clipboard across multiple instances of vim
 set clipboard=unnamed
+
+" }}}
+
+" NON-CODING IN VIM {{{
+
+" Settings to use when editing markdown text
+autocmd BufRead,BufNewFile *.md
+    \ setlocal textwidth=80 |
+    \ setlocal formatoptions=t1
 
 " }}}
 
