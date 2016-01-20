@@ -46,15 +46,26 @@ highlight CursorLineNr cterm=bold ctermbg=gray ctermfg=blue
 set list
 set listchars=trail:~,space:·
 
-" select theme
 if &term == "xterm-256color"
+    " select theme
     set t_Co=256
     colorscheme gruvbox
     set background=dark
+
+    " set highlighting color for misspelled words
 endif
 
 " set clipboard across multiple instances of vim
 set clipboard=unnamed
+
+" If we're dealing w/an HTML or CSS file, set tab indent to TWO spaces
+autocmd FileType css
+    \ setlocal tabstop=2 |
+    \ setlocal softtabstop=2
+
+autocmd FileType html
+    \ setlocal tabstop=2 |
+    \ setlocal softtabstop=2
 
 " }}}
 
@@ -63,7 +74,8 @@ set clipboard=unnamed
 " Settings to use when editing markdown text
 autocmd BufRead,BufNewFile *.md
     \ setlocal textwidth=80 |
-    \ setlocal formatoptions=t1
+    \ setlocal formatoptions=t1 |
+    \ setlocal spell spelllang=en_us
 
 " }}}
 
