@@ -2,7 +2,7 @@
 
 # ~/.bashrc
 # fmc (franklin.chou@yahoo.com)
-# last modified: 23 Nov 2015
+# last modified: 25 Jan 2015
 #
 
 # use 256 color
@@ -79,17 +79,17 @@ function __torrent {
             break
         fi
     done
-
     return
 }
 
 # aliases
-alias ls='ls --color=auto -a --group-directories-first'
+alias ls=__ls
 alias dir='ls --color=auto'
 alias grep='grep --color=auto'
 alias screen='screen -c /home/fmc/.config/screen/.screenrc'
-alias transmission='__torrent'
-alias tasks='__tasklist'
+# alias transmission='__torrent'
+alias cls='clear'
+alias path='echo -e ${PATH//:/\\n}'
 
 # colorizes; adds BASH command, green N for nominal, yellow W for all errors/warnings
 status_nominal=$Green
@@ -106,14 +106,21 @@ user_color=$Blue
 host_color=$UBlack  # Black not visible in terminal
 path_color=$BBlue
 
+
+# Removed status indicator; prepend to restore:
+# \[$status$Color_Off\]\
+
 PS1="\
-\[$status$Color_Off\]\
-\[ [$user_color\]\u\
+\[[$user_color\]\u\
 \[$Color_Off\]@\
 \[$host_color\]\h\
 \[$Color_Off\] ]\
 \[ $path_color\]\W\
 \[$Color_Off\] > "
+
+#------------------------------------------------------------------------------
+# Functions
+#------------------------------------------------------------------------------
 
 # lists available python versions
 function __py_ver_list {
@@ -123,19 +130,12 @@ function __py_ver_list {
     return
 }
 
-# lists outstanding dev tasks
-function __tasklist {
-    if [[ -s "tasks.txt" ]]; then
-        echo -e "$BCyan""Outstanding development tasks:$Color_Off"
-        n=1
-        while read p; do
-            echo $n" "$p
-            n=$(( n+1 ))
-        done <tasks.txt
-        echo ""
+function __ls {
+    if [ "${PWD}" = "/home/fmc" ]; then
+        /bin/ls --color=auto --group-directories-first
+        return
     fi
-
-    return
+    /bin/ls -a --color=auto --group-directories-first
 }
 
 #------------------------------------------------------------------------------
@@ -148,5 +148,5 @@ __py_ver_list
 #------------------------------------------------------------------------------
 source ~/.config/.bash/colorize_man_pages.sh
 
-# changes directory to home
-cd ~
+# changes initial working directory
+cd ~/dev/minilabs

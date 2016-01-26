@@ -1,7 +1,7 @@
 "
 " vimrc
 " fmc (franklin.chou@yahoo.com)
-" Last Modified: 17 Jan 2015
+" Last Modified: 25 Jan 2015
 "
 
 " SET FEEDBACK {{{
@@ -63,7 +63,9 @@ autocmd FileType css
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2
 
-autocmd FileType html
+autocmd FileType html,htmldjango
+    \ setlocal textwidth=80 |
+    \ setlocal formatoptions=t1 |
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2
 
