@@ -83,7 +83,6 @@ function __torrent {
 }
 
 # aliases
-alias ls=__ls
 alias dir='ls --color=auto'
 alias grep='grep --color=auto'
 alias screen='screen -c /home/fmc/.config/screen/.screenrc'
@@ -130,12 +129,12 @@ function __py_ver_list {
     return
 }
 
-function __ls {
+ls() {
     if [ "${PWD}" = "/home/fmc" ]; then
-        /bin/ls --color=auto --group-directories-first
+        command ls --color=auto --group-directories-first "$@"
         return
     fi
-    /bin/ls -a --color=auto --group-directories-first
+    command ls -a --color=auto --group-directories-first "$@"
 }
 
 #------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 "
 " vimrc
 " fmc (franklin.chou@yahoo.com)
-" Last Modified: 25 Jan 2015
+" Last Modified: 05 Feb 2015
 "
 
 " SET FEEDBACK {{{
@@ -51,12 +51,14 @@ if &term == "xterm-256color"
     set t_Co=256
     colorscheme gruvbox
     set background=dark
-
-    " set highlighting color for misspelled words
 endif
 
 " set clipboard across multiple instances of vim
 set clipboard=unnamed
+
+" }}}
+
+" HTML/CSS {{{
 
 " If we're dealing w/an HTML or CSS file, set tab indent to TWO spaces
 autocmd FileType css
@@ -64,8 +66,11 @@ autocmd FileType css
     \ setlocal softtabstop=2
 
 autocmd FileType html,htmldjango
-    \ setlocal textwidth=80 |
-    \ setlocal formatoptions=t1 |
+    \ setlocal autoindent |
+    \ setlocal colorcolumn=100 |
+    \ setlocal textwidth=100 |
+    \ setlocal shiftwidth=2 |
+    \ setlocal expandtab |
     \ setlocal tabstop=2 |
     \ setlocal softtabstop=2
 
@@ -75,7 +80,8 @@ autocmd FileType html,htmldjango
 
 " Settings to use when editing markdown text
 autocmd BufRead,BufNewFile *.md
-    \ setlocal textwidth=80 |
+    \ setlocal colorcolumn=100 |
+    \ setlocal textwidth=100 |
     \ setlocal formatoptions=t1 |
     \ setlocal spell spelllang=en_us
 
