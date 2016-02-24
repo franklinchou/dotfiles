@@ -1,7 +1,7 @@
 --
 -- awesome wm configuration
 -- fmc (franklin.chou@yahoo.com)
--- last modified 20 Nov 2015 
+-- last modified 23 Feb 2016
 --
 -- Send to ~/dev/dotfiles
 
@@ -21,6 +21,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 
 -- {{{ Error handling
+
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -111,16 +112,20 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal },
-                                    { "chromium", chromium },
-                                    { "midori", midori },
-                                    { "firefox", firefox}
-                                  }
-                        })
+mymainmenu = awful.menu({
+    items = {
+                { "awesome", myawesomemenu, beautiful.awesome_icon },
+                { "open terminal", terminal },
+                { "chromium", chromium },
+                { "midori", midori },
+                { "firefox", firefox}
+            }
+})
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+mylauncher = awful.widget.launcher({
+    image = beautiful.awesome_icon,
+    menu  = mymainmenu
+})
 
 -- {{{ Wibox
 
@@ -161,7 +166,7 @@ function batInfo()
     end
 
     power_stat:close()
-    return " | "..battery..state.." "
+    return " | " .. battery .. state .. " "
 
 end
 
@@ -181,7 +186,7 @@ function volumeInfo()
     local s = f:read("*a")
     f:close()
 
-    return "| "..s 
+    return "| " .. s
 end
 
 volumewidget:set_markup(volumeInfo())
@@ -211,8 +216,8 @@ function weatherInfo()
             timeout = 10
         })
     end
-    f.close()                                                       
-    
+    f.close()
+
     return s
 end
 
@@ -227,63 +232,68 @@ weatherwidgettimer:start()
 mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
+
 mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
-                    awful.button({ }, 1, awful.tag.viewonly),
-                    awful.button({ modkey }, 1, awful.client.movetotag),
-                    awful.button({ }, 3, awful.tag.viewtoggle),
-                    awful.button({ modkey }, 3, awful.client.toggletag),
-                    awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
-                    )
+    awful.button({ }, 1, awful.tag.viewonly),
+    awful.button({ modkey }, 1, awful.client.movetotag),
+    awful.button({ }, 3, awful.tag.viewtoggle),
+    awful.button({ modkey }, 3, awful.client.toggletag),
+    awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
+    awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
+)
+
+-- Application task bar
 mytasklist = {}
-mytasklist.buttons = awful.util.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  -- Without this, the following
-                                                  -- :isvisible() makes no sense
-                                                  c.minimized = false
-                                                  if not c:isvisible() then
-                                                      awful.tag.viewonly(c:tags()[1])
-                                                  end
-                                                  -- This will also un-minimize
-                                                  -- the client, if needed
-                                                  client.focus = c
-                                                  c:raise()
-                                              end
-                                          end),
-                     awful.button({ }, 3, function ()
-                                              if instance then
-                                                  instance:hide()
-                                                  instance = nil
-                                              else
-                                                  instance = awful.menu.clients({
-                                                      theme = { width = 250 }
-                                                  })
-                                              end
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                              if client.focus then client.focus:raise() end
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                              if client.focus then client.focus:raise() end
-                                          end))
+mytasklist.buttons =
+    awful.util.table.join(
+        -- Functionality for 4th & 5th mouse buttons removed, 23 Feb 2016.
+        awful.button({ }, 1,
+            function (c)
+                if c == client.focus then
+                  c.minimized = true
+                else
+                    -- Without this, the following
+                    -- :isvisible() makes no sense
+                    c.minimized = false
+                    if not c:isvisible() then
+                        awful.tag.viewonly(c:tags()[1])
+                    end
+                    -- This will also un-minimize
+                    -- the client, if needed
+                    client.focus = c
+                    c:raise()
+                end
+            end
+        ),
+        awful.button({ }, 3,
+            function ()
+                if instance then
+                    instance:hide()
+                    instance = nil
+                else
+                    instance = awful.menu.clients({
+                        theme = { width = 250 }
+                    })
+                end
+            end)
+    )
 
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
+
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
-    mylayoutbox[s]:buttons(awful.util.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
-                           awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
+    mylayoutbox[s]:buttons(
+        awful.util.table.join(
+           awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
+           awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
+           awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
+           awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)
+        )
+    )
     -- Create a taglist widget
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
@@ -327,7 +337,7 @@ end
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+    -- awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -365,7 +375,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     --awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
-    --awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),    
+    --awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
@@ -374,36 +384,43 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "v",    function()  volume("down", volumewidget) end),
 
     -- display control
-    awful.key({ modkey, "Control" }, "n", awful.client.restore)
+    awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    -- Prompt
-    -- modkey + r for run dialog disabled, 13 Oct 2015
-    -- awful.key({ modkey        },  "r",     function () mypromptbox[mouse.screen]:run() end),
-
-    -- modkey + x to run lua code removed, 13 Oct 2015
+    -- power control
+    -- Lenovo T430, #108 binds PrintScreen
+    awful.key({ modkey, "#108"     }, "p",   function() awful.util.spawn("systemctl poweroff") end),
+    awful.key({ modkey, "#108"     }, "r",   function() awful.util.spawn("systemctl reboot") end),
+    awful.key({ modkey, "#108"     }, "s",   function() awful.util.spawn("systemctl suspend") end)
 )
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
-    
+
     -- adjust diagonal; for use with floating windows
+
+    -- Toggle floating window
+    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
+
     awful.key({ modkey,           }, "Prior",  function () awful.client.moveresize(0, 0, -40, -40) end),
     awful.key({ modkey,           }, "Next",   function () awful.client.moveresize(0, 0, 40, 40)   end),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
-    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
+    -- awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
+    -- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
+
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be minimized; minimized clients can't have focus.
             c.minimized = true
-        end),
+        end
+    ),
+
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
-        end)
+        end
+    )
 )
 
 -- Bind all key numbers to tags.
@@ -413,22 +430,12 @@ for i = 1, 9 do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
-                  function ()
-                        local screen = mouse.screen
-                        local tag = awful.tag.gettags(screen)[i]
-                        if tag then
-                           awful.tag.viewonly(tag)
-                        end
-                  end),
-        -- Toggle tag.
-        -- Note: toggle temporarily displays the selected tag(s) in the current tag window; toggling the active tag will minimize all active clients in the tag.
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
             function ()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
-                if tag then
-                    awful.tag.viewtoggle(tag)
-                end
+            if tag then
+                awful.tag.viewonly(tag)
+            end
             end
         ),
         -- Move client to tag.
@@ -441,17 +448,6 @@ for i = 1, 9 do
                     end
                 end
             end
-        ),
-        -- Toggle tag.
-        awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-            function ()
-                if client.focus then
-                    local tag = awful.tag.gettags(client.focus.screen)[i]
-                    if tag then
-                        awful.client.toggletag(tag)
-                    end
-                end
-            end
         )
     )
 end
@@ -459,7 +455,8 @@ end
 clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ modkey }, 3, awful.mouse.client.resize))
+    awful.button({ modkey }, 3, awful.mouse.client.resize)
+)
 
 -- Set keys
 root.keys(globalkeys)
@@ -475,16 +472,8 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      keys = clientkeys,
-                     buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+                     buttons = clientbuttons }
+    }
 }
 -- }}}
 
