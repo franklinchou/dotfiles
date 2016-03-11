@@ -1,7 +1,7 @@
 --
 -- awesome wm configuration
 -- fmc (franklin.chou@yahoo.com)
--- last modified 23 Feb 2016
+-- last modified 10 Mar 2016
 --
 -- Send to ~/dev/dotfiles
 
@@ -388,7 +388,7 @@ globalkeys = awful.util.table.join(
 
     -- power control
     -- Lenovo T430, #108 binds PrintScreen
-    awful.key({ modkey, "#108"     }, "p",   function() awful.util.spawn("systemctl poweroff") end),
+    -- awful.key({ modkey, "#108"     }, "p",   function() awful.util.spawn("systemctl poweroff") end),
     awful.key({ modkey, "#108"     }, "r",   function() awful.util.spawn("systemctl reboot") end),
     awful.key({ modkey, "#108"     }, "s",   function() awful.util.spawn("systemctl suspend") end)
 )
