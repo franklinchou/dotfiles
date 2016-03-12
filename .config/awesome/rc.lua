@@ -1,7 +1,7 @@
 --
 -- awesome wm configuration
 -- fmc (franklin.chou@yahoo.com)
--- last modified 10 Mar 2016
+-- last modified 23 Feb 2016
 --
 -- Send to ~/dev/dotfiles
 
@@ -468,6 +468,7 @@ awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
       properties = { border_width = beautiful.border_width,
+                     size_hints_honor = false,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
