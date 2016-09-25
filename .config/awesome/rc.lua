@@ -1,9 +1,13 @@
 --
 -- awesome wm configuration
 -- fmc (franklin.chou@yahoo.com)
--- last modified 23 Feb 2016
+-- last modified 25 Sept 2016
+
+
+-- CHANGE LOG
+-- Multiple monitor support added
+
 --
--- Send to ~/dev/dotfiles
 
 -- Standard awesome library
 local gears = require("gears")
@@ -385,6 +389,23 @@ globalkeys = awful.util.table.join(
 
     -- display control
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
+
+    -- Toggle monitors
+
+    --  screen focus 1
+    awful.key({ modkey, }, "F1",
+        function ()
+            awful.screen.focus(1)
+        end
+    ),
+
+    --  screen focus 2
+    awful.key({ modkey, }, "F2",
+        function ()
+            awful.screen.focus(2)
+        end
+    ),
+
 
     -- power control
     -- Lenovo T430, #108 binds PrintScreen
