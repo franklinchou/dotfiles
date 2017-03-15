@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# ordinarily resides in /home/$USER
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -34,6 +36,11 @@ fi
 
 # set beep volume
 amixer set 'Beep' 1%
+
+# disable touchpad
+declare -i TOUCHPAD_ID
+TOUCHPAD_ID=`xinput list | grep -Eio 'touchpad\s*id\=[0-9]{1,2}' | grep -Eio '[0-9]{1,2}'`
+xinput disable $TOUCHPAD_ID
 
 exec awesome
 
