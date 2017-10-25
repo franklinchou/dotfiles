@@ -100,7 +100,10 @@ alias l='ls -CF'
 # git aliases
 alias gst='git status'
 alias gch='git checkout'
+alias gchd='git checkout develop'
+alias grh='git reset --hard HEAD'
 # alias push="git push origin "$(git branch | grep \* | cut -d ' ' -f2-)""
+alias gc='git commit'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -117,7 +120,15 @@ fi
 
 alias pycharm='/opt/pycharm-2017.2.3/bin/pycharm.sh'
 alias ij='/opt/idea-IU-172.4155.36/bin/idea.sh'
-# alias vpn='sudo openvpn --config ~/.config/openvpn/client.ovpn &'
+alias vpn=__openvpn
+alias sc='sbt console'
+
+
+__openvpn () {
+    sudo -v && sudo openvpn --config ~/.config/openvpn/client.ovpn --daemon
+}
+
+
 
 #------------------------------------------------------------------------------
 
@@ -131,5 +142,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# NANO? Are you kidding me?
+export EDITOR='vim'
+
 
 cd ~/Documents/dev
