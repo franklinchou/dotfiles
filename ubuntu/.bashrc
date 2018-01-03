@@ -105,19 +105,33 @@ fi
 # Aliases
 #------------------------------------------------------------------------------
 
+# [Git]
+
+source /usr/share/bash-completion/completions/git
+
+# Set up git subcommand completion alias for `checkout`
+# See https://stackoverflow.com/questions/9869227/git-autocomplete-in-bash-aliases
+alias gch="git checkout"
+alias gchd='git checkout develop'
+__git_complete gch _git_checkout
+
+# more git aliases
+alias gst='git status'
+alias grh='git reset --hard'
+
+alias gc='git commit'
+alias gca='git commit -a'
+__git_complete gc _git_commit
+
+alias ga='git add'
+__git_complete ga _git_add
+
+alias gpc='git push origin `git symbolic-ref --short HEAD`'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# git aliases
-alias gst='git status'
-alias gch='git checkout'
-alias gchd='git checkout develop'
-alias grh='git reset --hard HEAD'
-# alias push="git push origin "$(git branch | grep \* | cut -d ' ' -f2-)""
-alias gc='git commit'
-alias gpc='git push origin `git symbolic-ref --short HEAD`'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -161,4 +175,11 @@ fi
 # NANO? Are you kidding me?
 export EDITOR='vim'
 
+# Load environment vars from external file
+source ~/.config/.env
+
 cd ~/Documents/dev
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
