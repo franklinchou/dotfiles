@@ -115,9 +115,11 @@ alias gch="git checkout"
 alias gchd='git checkout develop'
 __git_complete gch _git_checkout
 
-# more git aliases
 alias gst='git status'
 alias grh='git reset --hard'
+alias gls='git branch'
+alias gdb='git branch -D'
+__git_complete gdb _git_branch
 
 alias gc='git commit'
 alias gca='git commit -a'
@@ -128,7 +130,8 @@ __git_complete ga _git_add
 
 alias gpc='git push origin `git symbolic-ref --short HEAD`'
 
-# some more ls aliases
+
+# [ls]
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -146,18 +149,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias pycharm='/opt/pycharm-2017.2.3/bin/pycharm.sh'
-alias ij='/opt/idea-IU-172.4155.36/bin/idea.sh'
-alias dg='/opt/DataGrip-2017.2.2/bin/datagrip.sh'
+alias screen='screen -c ~/.config/screen/.screenrc'
 alias vpn=__openvpn
-alias sc='sbt console'
-
 
 __openvpn () {
     sudo -v && sudo openvpn --config ~/.config/openvpn/client.ovpn --daemon
 }
 
-alias screen='screen -c ~/.config/screen/.screenrc'
 
 #------------------------------------------------------------------------------
 
