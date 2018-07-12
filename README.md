@@ -1,13 +1,21 @@
-# FMC Linux Config Files
+# Linux Config Files
 
 ## Config files for my Arch distribution
 
-__Assumes__: If cloned, assumes these files will reside in `/home/fmc`
+If cloned, assumes these files will reside in `/home/fmc`
+
+
+### VIM
+
+Uses vim-plug for plugin management. See [here](https://github.com/junegunn/vim-plug). Package can be easily installed
+by issuing the following from `~`:
+
+```
+mkdir .vim/autoload && cd $_
+wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 
 ## Config files for Ubuntu
 
-### TODO:
-* Fix screen resolution on external monitor
-* Boot slack app on startup
-* Confine firefox to "broswer" tag (Awesome windows manager)
-* Place volume control/meter
+`/home/franklinchou`
