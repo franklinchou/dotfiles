@@ -25,7 +25,7 @@ ttrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
 defbce "on"
 
-# audio bell (can be toggled via: <C-a><C-g>
+# audio bell (can be toggled via: <C-a><C-g>)
 vbell on
 
 backtick 1 1 1 '/home/fmc/.config/screen/get_mem.sh'
