@@ -5,4 +5,4 @@
   * `export GOPATH=$HOME/Documents/dev/go` This is where go anticipates go project source code to be stored
   * `export GOROOT=/usr/local/go` This is the location of the go executable
   
-  Alternatively these can be set in `~/.config/.env` where all other environment variables in Franklin \*nix distributions are stored.
+  Alternatively these can be set in `~/.config/.env` where all other environment variables in Franklin \*nix distributions are stored. **DON'T** store these variables in `~/.profile` (as the article suggests); it breaks convention!
