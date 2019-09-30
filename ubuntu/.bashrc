@@ -111,7 +111,7 @@ source /usr/share/bash-completion/completions/git
 
 # Set up git subcommand completion alias for `checkout`
 # See https://stackoverflow.com/questions/9869227/git-autocomplete-in-bash-aliases
-alias gch="git checkout"
+alias gch='git checkout'
 alias gchd='git checkout develop'
 __git_complete gch _git_checkout
 
@@ -128,6 +128,7 @@ __git_complete gc _git_commit
 alias ga='git add'
 __git_complete ga _git_add
 
+alias gp='git pull'
 alias gpc='git push origin `git symbolic-ref --short HEAD`'
 
 
