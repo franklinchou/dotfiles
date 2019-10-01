@@ -128,7 +128,7 @@ __git_complete gc _git_commit
 alias ga='git add'
 __git_complete ga _git_add
 
-alias gp='git pull'
+alias gp='git pull origin `git rev-parse --abbrev-ref HEAD`'
 alias gpc='git push origin `git symbolic-ref --short HEAD`'
 
 
