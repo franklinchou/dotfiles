@@ -137,6 +137,13 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+
+# [vim]
+
+# Open a file with the cursor at the last line of the file
+alias oplast="vim '+normal GA'"
+
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -150,7 +157,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-alias screen='screen -c ~/.config/screen/.screenrc'
+if [ -f ~/.config/screen/.screenrc ]; then
+    alias screen='screen -c ~/.config/screen/.screenrc'
+fi
+
 alias vpn=__openvpn
 
 __openvpn () {
@@ -171,11 +181,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# NANO? Are you kidding me?
+#------------------------------------------------------------------------------
+# [VIM]
+
 export EDITOR='vim'
 
+#------------------------------------------------------------------------------
+
 # Load environment vars from external file
-source ~/.config/.env
+if [ -f ~/.config/.env ]; then
+    source ~/.config/.env
+fi
 
 cd ~/Documents/dev
 
