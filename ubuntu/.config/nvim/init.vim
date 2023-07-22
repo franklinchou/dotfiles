@@ -16,8 +16,8 @@ set textwidth=0
 set laststatus=2
 
 " set gutter
-" set colorcolumn=80
-set colorcolumn=120
+set colorcolumn=88
+" set colorcolumn=120
 
 " kill mouse clicks in vim, b/c isn't that the whole point?
 set mouse-=a
